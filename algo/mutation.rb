@@ -4,7 +4,20 @@
 
 def mutation?(base_word, mutation)
 
-  
+  reps = mutation.length
+  true_count = 0
+  mutation.each_char do |letter|
+    if base_word.include? mutation[reps - mutation.length]
+      reps -= 1
+      true_count += 1
+    end
+  end
+if true_count == mutation.length
+  true 
+else
+  false
+end
+
 end
 
 # Driver code - don't touch anything below this line.

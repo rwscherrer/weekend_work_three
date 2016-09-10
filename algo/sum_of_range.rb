@@ -4,6 +4,19 @@
 
 def sum_of_range(array)
 
+  if array[0] > array[1]
+    rev_array = array.reverse
+    range_array = (rev_array[0]..rev_array[1]).to_a
+    sum = 0
+    range_array.each {|e| sum += e}
+    p sum
+  else
+      range_array = (array[0]..array[1]).to_a
+      sum = 0
+      range_array.each {|e| sum += e }
+      p sum
+  end
+
 end
 
 # Driver code - don't touch anything below this line.

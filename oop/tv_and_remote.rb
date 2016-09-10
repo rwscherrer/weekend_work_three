@@ -10,3 +10,133 @@
 # increment_volume (this will increase the tv's volume by 1)
 # decrement_volume (this will decrease the tv's volume by 1)
 # set_channel (this will change the tv's channel to whatever integer is passed to this method)
+
+class Tv
+  attr_accessor :power, :volume, :channel,  :tv
+
+  def initialize(input_options)
+    @power = input_options[:power]
+    @volume = input_options[:volume]
+    @channel = input_options[:channel]
+    @tv = input_options[:tv]
+  end
+end
+
+class Remote < Tv
+  attr_accessor :power, :volume, :channel
+
+  def remote
+    @remote = remote
+  end
+
+  def toggle_power
+    
+  end
+
+  def increment_volume
+    @volume += 1
+  end
+
+  def decrement_volume
+    @volume -= 1
+  end
+end
+
+#Driver code
+
+puts "Testing the Tv class..."
+puts
+
+tv = Tv.new({power: false, volume: 10, channel: 2, tv: "bedroom"})
+
+result = tv.tv
+
+puts "tv returned"
+puts result
+puts
+
+if result == "bedroom"
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = tv.volume
+
+puts "volume returned"
+puts result
+puts
+
+if result == 10
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = tv.channel
+
+puts "channel returned"
+puts result
+puts
+
+if result == 2
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = tv.power
+
+puts "power returned"
+puts result
+puts
+
+if result == false
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = @toggle_power
+
+puts "toggle_power returned"
+puts result
+puts
+
+if result == true
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = @increment_volume
+
+puts "increment_volume returned"
+puts result
+puts
+
+if result == 11
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = @decrement_volume
+
+puts "decrement_volume returned"
+puts result
+puts
+
+if result == 9
+  puts "PASS!"
+else
+  puts "F"
+end
+
+
+
+
+
+
+
+

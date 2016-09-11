@@ -12,7 +12,8 @@
 # set_channel (this will change the tv's channel to whatever integer is passed to this method)
 
 class Tv
-  attr_accessor :power, :volume, :channel,  :tv
+  attr_reader :power, :volume, :channel, :tv
+  attr_writer :power, :volume, :channel
 
   def initialize(input_options)
     @power = input_options[:power]
@@ -20,25 +21,50 @@ class Tv
     @channel = input_options[:channel]
     @tv = input_options[:tv]
   end
+
+  def power=(new_value)
+    @power = new_value
+  end
+
+  def volume=(new_value)
+    @volume = new_value
+  end
+
+  def channel=(new_value)
+    @channel = new_value
+  end
+
 end
 
 class Remote < Tv
-  attr_accessor :power, :volume, :channel
+  attr_accessor :power, :volume, :channel, :tv
+
+  def initialize(input_options)
+    super(input_options)
+  end
 
   def remote
     @remote = remote
   end
 
   def toggle_power
-    
+    if @power == true
+      @power = false
+      puts @power
+    else
+      @power = false
+      puts @power
+    end
   end
 
   def increment_volume
     @volume += 1
+    puts @volume
   end
 
   def decrement_volume
     @volume -= 1
+    puts @volume
   end
 end
 
@@ -132,10 +158,6 @@ if result == 9
 else
   puts "F"
 end
-
-
-
-
 
 
 
